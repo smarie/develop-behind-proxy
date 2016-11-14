@@ -1,7 +1,5 @@
 # develop-behind-proxy
-Some configuration tricks for developers located behind a corporate proxy.
-Most of these have been tested under Windows behind a specific NTLM proxy (Zscaler), so it far from being exhaustive! 
-Linux testers, and other proxy users, welcome ;) 
+Some configuration tricks for developers located behind a corporate proxy. Most of these have been tested under Windows behind a specific NTLM proxy (Zscaler), so it far from being exhaustive! Linux testers, and other proxy users, welcome ;) 
 
 ## 0. NTLM Proxy preamble
 
@@ -30,8 +28,7 @@ Git relies on the following standard unix/linux environment variables that you s
     HTTPS_PROXY     http://<proxy_host>:<proxy_port>
     NO_PROXY        localhost,127.0.0.1,<local_addresses>
 
-In addition, there is no handy way to always trust the proxy certificate, without disabling the one from the other authorities or without a tideous addition into the certificate store (see http://stackoverflow.com/questions/23807313/adding-self-signed-ssl-certificate-without-disabling-authority-signed-ones). 
-For this reason I currently use the following *BAD* habit of disabling SSL cert validation for Git:
+In addition, there is no handy way to always trust the proxy certificate, without disabling the one from the other authorities or without a tideous addition into the certificate store (see http://stackoverflow.com/questions/23807313/adding-self-signed-ssl-certificate-without-disabling-authority-signed-ones). For this reason I currently use the following *BAD* habit of disabling SSL cert validation for Git:
 
 * Edit your Global git config file. For that you have two options
     * Right click > TortoiseGit > Settings > Git > "Edit Global .gitconfig" button
