@@ -65,6 +65,19 @@ Tested with Community Edition 2016.2.3:
 Enable "Manual Proxy Configuration" under *File > Settings > Appearance & Behaviour > System Settings > HTTP Proxy*.
 
 
+## 3. Matlab
+
+In MATLAB Settings (*Home > Preferences > Web*) you may configure the proxy host and port.
+
+Alternatively you may set it using a script:
+
+    com.mathworks.mlwidgets.html.HTMLPrefs.setUseProxy(true);
+    com.mathworks.mlwidgets.html.HTMLPrefs.setProxyHost('<proxy_host>');
+    com.mathworks.mlwidgets.html.HTMLPrefs.setProxyPort('<proxy_port>');
+    com.mathworks.mlwidgets.html.HTMLPrefs.setProxySettings();
+
+There is a nice forum post here to help you trust an SSL certificate in Matlab's JRE : https://fr.mathworks.com/matlabcentral/answers/92506-how-can-i-configure-matlab-to-allow-access-to-self-signed-https-servers?requestedDomain=www.mathworks.com
+
 # Additional readings
 
 http://devangst.com/death-by-proxy-tips-for-developing-behind-proxy/ 
