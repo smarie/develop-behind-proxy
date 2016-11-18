@@ -1,5 +1,5 @@
 # develop-behind-proxy
-Some configuration tricks for developers located behind a corporate proxy. Most of these have been tested under Windows behind a specific NTLM proxy (Zscaler), so it far from being exhaustive! Linux testers, and other proxy users, welcome ;) 
+Some configuration tricks for developers located behind a corporate proxy. Most of these have been tested under Windows behind a specific NTLM proxy (Zscaler), so it is far from being exhaustive! Linux testers, and other proxy users, welcome ;) 
 
 ## 0. NTLM Proxy preamble
 
@@ -48,7 +48,7 @@ Note (optional) that you may also wish to add information about you in this same
 
 ### Conda
 
-Tested with Anaconda3 4.2.0.
+Tested with Anaconda3 4.2.0. Run this command in any windows commandline:
 
     conda config --set ssl_verify <path_to_proxy_cert_file.crt>
 
@@ -61,9 +61,11 @@ Create a file under *%APPDATA%/pip/pip.ini* containing
 
 ### PyCharm
 
-Tested with Community Edition 2016.2.3:
-Enable "Manual Proxy Configuration" under *File > Settings > Appearance & Behaviour > System Settings > HTTP Proxy*.
+By default PyCharm relies on the python distribution (e.g. conda) to install the packages. Therefore if you configured conda, PyCharm will be able to download packages from the web. 
 
+In addition, in order for PyCharm to be able to download its updates, it needs to be configured:
+Enable "Manual Proxy Configuration" under *File > Settings > Appearance & Behaviour > System Settings > HTTP Proxy*.
+(Tested with Community Edition 2016.2.3:)
 
 ## 3. Matlab
 
