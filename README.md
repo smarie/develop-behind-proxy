@@ -67,6 +67,8 @@ In addition, in order for PyCharm to be able to download its updates, it needs t
 Enable "Manual Proxy Configuration" under *File > Settings > Appearance & Behaviour > System Settings > HTTP Proxy*.
 (Tested with Community Edition 2016.2.3:)
 
+You may then add the proxy's server certificate to the list of trusted servers, using *Tools > Server Certificates*
+
 ## 3. Matlab
 
 In MATLAB Settings (*Home > Preferences > Web*) you may configure the proxy host and port.
