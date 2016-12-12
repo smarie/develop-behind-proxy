@@ -82,6 +82,14 @@ Alternatively you may set it using a script:
 
 There is a nice forum post here to help you trust an SSL certificate in Matlab's JRE : https://fr.mathworks.com/matlabcentral/answers/92506-how-can-i-configure-matlab-to-allow-access-to-self-signed-https-servers?requestedDomain=www.mathworks.com
 
+
+## 4. R
+
+R provides several packages to perform http call (httr, Rcurl, curl). By default, the HTTP_PROXY and HTTPS_PROXY environment variables seem to be taken into account quite well.
+
+Additionally, you may trust a proxy by appending it's root cert at the end of the following file : `<R_HOME>\etc\curl-ca-bundle.crt`
+
+
 # Additional readings
 
 http://devangst.com/death-by-proxy-tips-for-developing-behind-proxy/ 
