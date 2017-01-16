@@ -19,14 +19,14 @@ To check this, here is the procedure using Firefox:
 
 The guide below helps you to perform these 3 steps in the various tools. If you don't find your tool in the list, please feel free to contribute with a pull request.
 
-
-## 1. Git
-
-Git relies on the following standard unix/linux environment variables that you should define in your OS : 
+Git, Conda and Pip relies on the following standard unix/linux environment variables that you should define in your OS : 
 
     HTTP_PROXY      http://<proxy_host>:<proxy_port>  
     HTTPS_PROXY     http://<proxy_host>:<proxy_port>
     NO_PROXY        localhost,127.0.0.1,<local_addresses>
+
+
+## 1. Git
 
 In addition, there is no handy way to always trust the proxy certificate, without disabling the one from the other authorities or without a tideous addition into the certificate store (see http://stackoverflow.com/questions/23807313/adding-self-signed-ssl-certificate-without-disabling-authority-signed-ones). For this reason I currently use the following *BAD* habit of disabling SSL cert validation for Git:
 
@@ -48,16 +48,26 @@ Note (optional) that you may also wish to add information about you in this same
 
 ### Conda
 
-Tested with Anaconda3 4.2.0. Run this command in any windows commandline:
+In addition to the environment variables you should define for Git, Pip and Conda (0. NTLM Proxy preamble) Conda also requires the following one:     
+    
+    CURL_CA_BUNDLE  <path_to_cert_file.crt>
 
-    conda config --set ssl_verify <path_to_proxy_cert_file.crt>
+Depending on your local_address, you may need to modify the content of the cert_file, adding the originally autorized certificats.
+Those certificats can be found in the python package certifi (https://pypi.python.org/pypi/certifi), in the file cacert.pem locating in the package installation directory. (The certificates file extracted on the 13/01/2017 is provided in this project)
+The content of cacert.pem must be added into your cert_file.
 
-### Pip
+### Pip 
+
+Tested with pip 9.0.1
 
 Create a file under *%APPDATA%/pip/pip.ini* containing
 
     [global]
     cert = <path_to_proxy_cert_file.crt>
+
+Depending on your local_address, you may need to modify the content of the cert_file, adding the originally autorized certificats.
+Those certificats can be found in the python package certifi (https://pypi.python.org/pypi/certifi), in the file cacert.pem locating in the package installation directory. (The certificates file extracted on the 13/01/2017 is provided in this project)
+The content of cacert.pem must be added into your cert_file.
 
 ### PyCharm
 
