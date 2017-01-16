@@ -53,7 +53,7 @@ In addition to the environment variables you should define for Git, Pip and Cond
     CURL_CA_BUNDLE  <path_to_cert_file.crt>
 
 Depending on your local_address, you may need to modify the content of the cert_file, adding the originally autorized certificats.
-Those certificats can be found in the python package certifi (https://pypi.python.org/pypi/certifi), in the file cacert.pem locating in the package installation directory. 
+Those certificats can be found in the python package certifi (https://pypi.python.org/pypi/certifi), in the file cacert.pem locating in the package installation directory. (The certificates file extracted on the 13/01/2017 is provided in this project)
 The content of cacert.pem must be added into your cert_file.
 
 ### Pip 
@@ -66,7 +66,7 @@ Create a file under *%APPDATA%/pip/pip.ini* containing
     cert = <path_to_proxy_cert_file.crt>
 
 Depending on your local_address, you may need to modify the content of the cert_file, adding the originally autorized certificats.
-Those certificats can be found in the python package certifi (https://pypi.python.org/pypi/certifi), in the file cacert.pem locating in the package installation directory. 
+Those certificats can be found in the python package certifi (https://pypi.python.org/pypi/certifi), in the file cacert.pem locating in the package installation directory. (The certificates file extracted on the 13/01/2017 is provided in this project)
 The content of cacert.pem must be added into your cert_file.
 
 ### PyCharm
