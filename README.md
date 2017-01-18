@@ -75,6 +75,11 @@ You are now all set :
 This chapter helps you to configure the various applications that you may wish to use. Remember that the proxy prevents any application to access the internet, so any time an application does not work and you think it requires internet access, this might be it. If you don't find your tool in the list, please feel free to contribute with a pull request.
 
 
+### Common settings for tools that support auto-config scripts (.pac)
+
+Some tools are able to get their configuration with "auto-config" from a `.pac` script. If your organization provides such a script, simply use it to configure the tool and you're done.
+
+
 ### Common settings for several Unix/Linux inspired tools  
 
 Curl, Git, Conda, Pip and many others rely on the following standard unix/linux environment variables that you should define in your OS : 
@@ -121,8 +126,11 @@ cert = <path_to_ca_bundle.pem>
 
 By default PyCharm relies on the python distribution (e.g. conda) to install the packages. Therefore if you configured conda, PyCharm will be able to download packages from the web. 
 
-In addition, in order for PyCharm to be able to download its own updates, it needs to be configured:
-Enable "Manual Proxy Configuration" under *File > Settings > Appearance & Behaviour > System Settings > HTTP Proxy*.
+In addition, in order for PyCharm to be able to download its own updates, it needs to be configured under *File > Settings > Appearance & Behaviour > System Settings > HTTP Proxy*:
+
+* If possible, enable "Auto-detect Proxy settings" and possibly enter your automatic proxy configuration URL here.
+* Otherwise, enable "Manual Proxy Configuration" .
+
 (Tested with Community Edition 2016.2.3:)
 
 You may then add the proxy's server certificate to the list of trusted servers, using *Tools > Server Certificates*
@@ -180,11 +188,11 @@ Several Java-based applications ship with their own dedicated JVM: MATLAB, Rapid
 
 Note that for MATLAB a specific more 'user-friendly' tool was provided by Mathworks, see corresponding chapter above.
 
-### h) Browser plugins
+### h) Browsers
 
 Although browsers settings allow to modify the proxy more or less easily, there are useful plugins to switch even faster - typically between home and office.
 
-* Firefox: the excellent [Proxy Switcher](http://firefox.add0n.com/proxy-switcher.html) will save you time!
+* *Firefox*: the excellent [Proxy Switcher](http://firefox.add0n.com/proxy-switcher.html) add-on will save you time! It supports automatic configuration scripts (.pac) as well as manual configuration too.
 
 
 # Additional readings
