@@ -176,6 +176,12 @@ Several Java-based applications ship with their own dedicated JVM: MATLAB, Rapid
 
 Note that for MATLAB a specific more 'user-friendly' tool was provided by Mathworks, see corresponding chapter above.
 
+### h) Browser plugins
+
+Although browsers settings allow to modify the proxy more or less easily, there are useful plugins to switch even faster - typically between home and office.
+
+* Firefox: the excellent [Proxy Switcher](http://firefox.add0n.com/proxy-switcher.html) will save you time!
+
 
 # Additional readings
 
