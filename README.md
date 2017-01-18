@@ -75,14 +75,16 @@ You are now all set :
 This chapter helps you to configure the various applications that you may wish to use. Remember that the proxy prevents any application to access the internet, so any time an application does not work and you think it requires internet access, this might be it. If you don't find your tool in the list, please feel free to contribute with a pull request.
 
 
-### a) Common settings for several Unix/Linux inspired tools  
+### Common settings for several Unix/Linux inspired tools  
 
 Curl, Git, Conda, Pip and many others rely on the following standard unix/linux environment variables that you should define in your OS : 
 
-    HTTP_PROXY      http://<username>@<proxy_host>:<proxy_port>  
-    HTTPS_PROXY     http://<username>@<proxy_host>:<proxy_port>
-    NO_PROXY        localhost,127.0.0.1,<local_addresses>  
-    CURL_CA_BUNDLE  <path_to_ca_bundle.pem>
+```bash
+HTTP_PROXY      http://<username>@<proxy_host>:<proxy_port>  
+HTTPS_PROXY     http://<username>@<proxy_host>:<proxy_port>
+NO_PROXY        localhost,127.0.0.1,<local_addresses>  
+CURL_CA_BUNDLE  <path_to_ca_bundle.pem>
+```
 
 Important note: storing the list of trusted certificates in a raw file such as here `<path_to_ca_bundle.pem>` is still a bit unsecure, unless you make sure that the file can not be corrupted by a third party (at least you may wish to ensure that only administrators can modify this file). But this is far more secure than disabling SSL certificate verification in your application :)
 
@@ -132,10 +134,12 @@ In MATLAB Settings (*Home > Preferences > Web*) you may configure the proxy host
 
 Alternatively you may set it using a script:
 
-    com.mathworks.mlwidgets.html.HTMLPrefs.setUseProxy(true);
-    com.mathworks.mlwidgets.html.HTMLPrefs.setProxyHost('<proxy_host>');
-    com.mathworks.mlwidgets.html.HTMLPrefs.setProxyPort('<proxy_port>');
-    com.mathworks.mlwidgets.html.HTMLPrefs.setProxySettings();
+```matlab
+com.mathworks.mlwidgets.html.HTMLPrefs.setUseProxy(true);
+com.mathworks.mlwidgets.html.HTMLPrefs.setProxyHost('<proxy_host>');
+com.mathworks.mlwidgets.html.HTMLPrefs.setProxyPort('<proxy_port>');
+com.mathworks.mlwidgets.html.HTMLPrefs.setProxySettings();
+```
 
 There is a nice forum post here to help you trust an SSL certificate in Matlab's JRE : https://fr.mathworks.com/matlabcentral/answers/92506-how-can-i-configure-matlab-to-allow-access-to-self-signed-https-servers?requestedDomain=www.mathworks.com
 
