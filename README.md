@@ -192,7 +192,10 @@ Note that for MATLAB a specific more 'user-friendly' tool was provided by Mathwo
 
 Although browsers settings allow to modify the proxy more or less easily, there are useful plugins to switch even faster - typically between home and office.
 
-* *Firefox*: the excellent [Proxy Switcher](http://firefox.add0n.com/proxy-switcher.html) add-on will save you time! It supports automatic configuration scripts (.pac) as well as manual configuration too.
+* *Firefox*: 
+
+    * the excellent [Proxy Switcher](http://firefox.add0n.com/proxy-switcher.html) add-on will save you time! It supports automatic configuration scripts (.pac) as well as manual configuration too.
+    * in order to trust your proxy's root certificate, go to *Advanced Settings > Certificates > View Certificates > Authorities > Import* and import your proxy's root certificate here. Check the "Trust for websites" option, at least, and confirm.
 
 
 # Additional readings
