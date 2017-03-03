@@ -98,6 +98,15 @@ Important note: storing the list of trusted certificates in a raw file such as h
 
 Git accepts the environment variables described earlier. There is no simple way to add a unique certificate to git's trust store (see [this discussion](http://stackoverflow.com/questions/23807313/adding-self-signed-ssl-certificate-without-disabling-authority-signed-ones)), but it seems to correctly manage the `CURL_CA_BUNDLE` one (see previous chapter) so if you've done the previous steps you should be all set. 
 
+Edit : apparently this is not true, you have to add a specifig configuration option in one of your git configuration files:
+
+```
+[http]
+  sslCAInfo = <path_to_ca_bundle.pem>
+```
+
+[Thanks, source!](https://blogs.msdn.microsoft.com/phkelley/2014/01/20/adding-a-corporate-or-self-signed-certificate-authority-to-git-exes-store/)
+
 
 ### c) Python
 
