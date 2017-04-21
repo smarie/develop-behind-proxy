@@ -190,7 +190,7 @@ Most .Net-based applications rely on Internet Explorer proxy settings and Window
 * in IE Settings, declare the proxy : `Internet Options > Connections > Network Settings`
 * on your windows desktop, trust the proxy's root certificate by right-clicking on the certificate, and selecting `install certificate`
 
-You are then all set for most applications relying on the .Net framework..
+You are then all set for most applications relying on the .Net framework.
 
 
 ### g) Java-based applications
@@ -236,6 +236,32 @@ Acquire::http::proxy "http://proxy.company.com:80/";
 Acquire::https::proxy "https://proxy.company.com:80/";
 Acquire::ftp::proxy "ftp://proxy.company.com:80/";
 ```
+
+### k) NodeJS / npm
+
+npm honors the environment variables as described in section a). These should definitely be set even if you configure npm to use a proxy via npm's config file because any post-install hooks will NOT honor npm's config. If the environment variables are set, all post-install hooks should work properly. Certificate errors can be avoided by running `npm config set strict-ssl false`.
+
+### l) Apache cordova projects for Android / Gradle based projects
+
+Gradle-based Android projects (and as such those created by Apache cordova) need to have the proxy server configured via a specific file called `gradle.properties` in the project's root folder. It should have the following content:
+```
+systemProp.http.proxyHost=proxy.company.com
+systemProp.http.proxyPort=80
+systemProp.https.proxyHost=proxy.company.com
+systemProp.https.proxyPort=80
+```
+
+### m) Android Studio
+
+The proxy certificate needs to imported via the settings dialog: `Settings → Appereance & Behavior → System Settings → HTTP Proxy and Settings → Tools → Server Certificates`
+
+### n) Android SDK Manager (standalone tool)
+
+While the Android SDK downloads can be managed via the Android Studio, there is a standalone-tool for that task as well. If you still get certificate errors here, option the `Options` dialog and check the checkbox `Force https://... sources to be fetched using http://...`
+
+### o) WinHTTP service (used for Windows Update downloads)
+
+Sometimes the WinHTTP service doesn't pick up the proxy configured via the **Internet Options** dialog. If your windows installation fails to download updates and takes very long before producing an error, try configuring the WinHTTP service manually as described at http://www.winplat.net/post/2012/04/06/Configure-Proxy-settings-for-WinHttp-on-Windows-2008-R2-and-Windows-7.aspx
 
 # Additional readings
 
