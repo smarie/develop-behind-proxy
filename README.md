@@ -224,6 +224,18 @@ Although browsers settings allow to modify the proxy more or less easily, there 
     * the excellent [Proxy Switcher](http://firefox.add0n.com/proxy-switcher.html) add-on will save you time! It supports automatic configuration scripts (.pac) as well as manual configuration too.
     * in order to trust your proxy's root certificate, go to *Advanced Settings > Certificates > View Certificates > Authorities > Import* and import your proxy's root certificate here. Check the "Trust for websites" option, at least, and confirm.
 
+### i) OpenSSL-based applications (such as wget)
+
+OpenSSL uses a directory-based certificate store, usually in `/etc/ssl/certs`. To make OpenSSL-based applications accept your proxy's certificate, you need to copy the Base64-encoded crt file to that folder and create a symlink with a specific name to that file. That process is described at (http://gagravarr.org/writing/openssl-certs/others.shtml#ca-openssl)
+
+### j) APT (Debian Linux and Ubuntu Linux packet manager)
+
+`apt` unfortunately  does not honor the environment variables mentioned in section a) and needs  the proxy configured in a dedicated configuration file. As root, create a new file named `/etc/apt/apt.conf.d/99proxy` and the following content:
+```
+Acquire::http::proxy "http://proxy.company.com:80/";
+Acquire::https::proxy "https://proxy.company.com:80/";
+Acquire::ftp::proxy "ftp://proxy.company.com:80/";
+```
 
 # Additional readings
 
