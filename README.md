@@ -98,7 +98,7 @@ To set these environment variables in Linux you can either use the user-specific
 * Gentoo Linux: Create a new file in `/etc/env.d` such as `/etc/env.d/99proxy`
 
 On Windows, on configures the environment variables in the **Advanced System Settings**:
-* Press Windows-Key + R, enter `sysdm.cpl ,3` and press Enter
+* Press Windows-Key + R, enter `sysdm.cpl ,3` (mind the space before the comma) and press Enter
 * Click the **Environment variables** button
 * In either of the fields (**User variables** or **System variables**), add the three variables
 
@@ -115,6 +115,13 @@ Edit : apparently this is not true, you have to add a specifig configuration opt
 ```
 
 [Thanks, source!](https://blogs.msdn.microsoft.com/phkelley/2014/01/20/adding-a-corporate-or-self-signed-certificate-authority-to-git-exes-store/)
+
+Not directly related to the Proxy but if your organization's firewall should block outgoing connections to TCP port 9418 (used by the git:// protocol) and some software automatically clones from those URLs without any method to change the URLs, you can tell git to use the HTTPS protocol instead of the faster GIT protocol by adding these lines to you git config file:
+```
+[url "https://"]
+    insteadOf = git://
+```
+The same goes equivalently for the SSH protocol on TCP port 22.
 
 
 ### c) Python
