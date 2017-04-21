@@ -213,6 +213,8 @@ Several Java-based applications ship with their own dedicated JVM: MATLAB, Rapid
 
 Note that for MATLAB a specific more 'user-friendly' tool was provided by Mathworks, see corresponding chapter above.
 
+If you have any Java software or daemons/services running (for example the Gradle deamon used for Android development and which is automatically started) those will need to be killed and restarted before they start accepting the proxy's certificate.
+
 ### h) Browsers
 
 Although browsers settings allow to modify the proxy more or less easily, there are useful plugins to switch even faster - typically between home and office.
