@@ -1,0 +1,17 @@
+site_name: develop-behind-proxy
+# site_description: 'A short description of my project'
+repo_url: https://github.com/smarie/develop-behind-proxy
+pages:
+    - Home: index.md
+    - HTTP/HTTPs Proxy basics: basics.md
+    - Know your proxy: know_your_proxy.md
+    - Configure your applications: configure_apps.md
+    - Switching tools: switching.md
+    #- Usage details: usage.md
+    #- Changelog: changelog.md
+theme: material  # readthedocs  mkdocs
+
+markdown_extensions:
+  - admonition  # to add notes such as http://squidfunk.github.io/mkdocs-material/extensions/admonition/
+  - codehilite(guess_lang=false)
+  - toc(permalink=true)
