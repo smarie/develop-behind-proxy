@@ -1,0 +1,12 @@
+no_proxy:
+  name: No Proxy
+  http_proxy: ''
+  https_proxy: ''
+  no_proxy: ''
+  curl_ca_bundle: ''
+Proxy:
+  name: Proxy
+  http_proxy: http://proxyhost:8080
+  https_proxy: http://proxyhost:4443
+  no_proxy: localhost,127.0.0.1
+  curl_ca_bundle: C:/161201_cacert_certifi_myproxy.crt
