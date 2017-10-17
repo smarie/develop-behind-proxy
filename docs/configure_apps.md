@@ -136,9 +136,9 @@ You are then all set for most applications relying on the .Net framework..
 
 Each Java Virtual Machine (JVM) relies on a file named `cacerts` where the bundle of trusted certificated is held. This file is encrypted (as opposed to the one that we created for `curl_ca_bundle`) and its default password is `changeit`. You may first wish to change the password:
  
- ```bash
- > keytool -storepasswd -keystore "%JAVA_HOME%/jre/lib/security/cacerts"
- ```
+```bash
+> keytool -storepasswd -keystore "%JAVA_HOME%/jre/lib/security/cacerts"
+```
  
  And then add the trusted certificate:
 

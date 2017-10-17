@@ -1,4 +1,4 @@
-# switching tools
+# Switching tools
 
 If you find yourself switching frequently between proxy / non-proxy configurations, you might wish to use these tools.
 
