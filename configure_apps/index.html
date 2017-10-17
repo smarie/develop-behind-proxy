@@ -12,7 +12,7 @@
       
         <link rel="shortcut icon" href="../assets/images/favicon.png">
       
-      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.7.4">
+      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.10.3">
     
     
       
@@ -20,10 +20,10 @@
       
     
     
-      <script src="../assets/javascripts/modernizr-1df76c4e58.js"></script>
+      <script src="../assets/javascripts/modernizr-e826f8942a.js"></script>
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application-769c285a91.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application-9011e2d3f8.css">
       
     
     
@@ -61,10 +61,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        
-          <a href=".." title="develop-behind-proxy" class="md-icon md-icon--home md-header-nav__button">
-          </a>
-        
+        <a href=".." title="develop-behind-proxy" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon md-icon--home"></i>
+          
+        </a>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
@@ -83,17 +84,17 @@
         
           <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
           
-<div class="md-search" data-md-component="search">
+<div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="search"></label>
   <div class="md-search__inner">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" required placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
       <label class="md-icon md-search__icon" for="search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">&#xE5CD;</button>
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result" data-md-lang-search="">
+        <div class="md-search-result" data-md-component="result" data-md-lang-search="" data-md-lang-tokenizer="[\s\-]+">
           <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
             Type to start searching
           </div>
@@ -137,6 +138,7 @@
     <div class="md-container">
       
       
+      
       <main class="md-main">
         <div class="md-main__inner md-grid" data-md-component="container">
           
@@ -146,9 +148,11 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="drawer">
-    
-      <i class="md-icon md-icon--home md-nav__button"></i>
-    
+    <div class="md-nav__button md-logo">
+      
+        <i class="md-icon md-icon--home"></i>
+      
+    </div>
     develop-behind-proxy
   </label>
   
@@ -631,7 +635,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/smarie/develop-behind-proxy/edit/master/docs/configure_apps.md" title="Edit this page" class="md-icon md-content__icon">edit</a>
+                  <a href="https://github.com/smarie/develop-behind-proxy/edit/master/docs/configure_apps.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
                 <h1 id="configuring-each-application-to-use-the-proxy">Configuring each application to use the proxy<a class="headerlink" href="#configuring-each-application-to-use-the-proxy" title="Permanent link">&para;</a></h1>
@@ -728,11 +732,10 @@ cert = &lt;path_to_ca_bundle.pem&gt;
 <p>You are then all set for most applications relying on the .Net framework..</p>
 <h2 id="java-based-applications">Java-based applications<a class="headerlink" href="#java-based-applications" title="Permanent link">&para;</a></h2>
 <p>Each Java Virtual Machine (JVM) relies on a file named <code>cacerts</code> where the bundle of trusted certificated is held. This file is encrypted (as opposed to the one that we created for <code>curl_ca_bundle</code>) and its default password is <code>changeit</code>. You may first wish to change the password:</p>
-<p>```bash</p>
-<blockquote>
-<p>keytool -storepasswd -keystore "%JAVA_HOME%/jre/lib/security/cacerts"
- ```</p>
-</blockquote>
+<div class="codehilite"><pre><span></span>&gt; keytool -storepasswd -keystore <span class="s2">&quot;%JAVA_HOME%/jre/lib/security/cacerts&quot;</span>
+</pre></div>
+
+
 <p>And then add the trusted certificate:</p>
 <div class="codehilite"><pre><span></span>&gt; keytool -keystore <span class="s2">&quot;%JAVA_HOME%/jre/lib/security/cacerts&quot;</span> -importcert -alias &lt;proxy_alias&gt; -file &lt;proxy_root_certificate.cer&gt;
 </pre></div>
@@ -854,7 +857,7 @@ systemProp.https.proxyPort=80
       
     </div>
     
-      <script src="../assets/javascripts/application-c35428f87f.js"></script>
+      <script src="../assets/javascripts/application-f3ab9e5ff8.js"></script>
       
       
       <script>app.initialize({url:{base:".."}})</script>
