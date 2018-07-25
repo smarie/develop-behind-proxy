@@ -175,9 +175,9 @@ Internet Explorer relies on the Windows OS to get its proxy configuration. You m
 
 In order to trust your proxy's root certificate, right click on your proxy's certificate file (not the bundle file) in the windows file explorer and select *Install certificate*.
 
-## OpenSSL-based applications (such as wget)
+## OpenSSL-based applications (such as wget and curl)
 
-OpenSSL uses a directory-based certificate store, usually in `/etc/ssl/certs`. To make OpenSSL-based applications accept your proxy's certificate, you need to copy the Base64-encoded crt file to that folder and create a symlink with a specific name to that file. That process is described at (http://gagravarr.org/writing/openssl-certs/others.shtml#ca-openssl)
+OpenSSL uses a directory-based certificate store, usually in `/etc/ssl/certs` (but can vary, depending on your operating system / distribution and/or version of OpenSSL). To make OpenSSL-based applications accept your proxy's certificate, you need to copy the Base64-encoded crt file to that folder and create a symlink with a specific name to that file. That process is described at [http://gagravarr.org/writing/openssl-certs/others.shtml#ca-openssl](http://gagravarr.org/writing/openssl-certs/others.shtml#ca-openssl)
 
 ## APT (Debian Linux and Ubuntu Linux packet manager)
 
