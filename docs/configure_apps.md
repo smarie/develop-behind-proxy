@@ -32,10 +32,12 @@ curl_ca_bundle  <path_to_ca_bundle.pem>
 Important note: storing the list of trusted certificates in a raw file such as here `<path_to_ca_bundle.pem>` is still a bit unsecure, unless you make sure that the file can not be corrupted by a third party (at least you may wish to ensure that only administrators can modify this file). But this is **far** more secure than disabling SSL certificate verification in your application :)
 
 To set these environment variables in Linux you can either use the user-specific ~/.bashrc file or configure them in the global environment. However, this depends on the distribution you are running:
+
 * Ubuntu: Create or append to `/etc/environment`
 * Gentoo Linux: Create a new file in `/etc/env.d` such as `/etc/env.d/99proxy`
 
 On Windows, one configures the environment variables in the **Advanced System Settings**:
+
 * Press Windows-Key + R, enter `sysdm.cpl ,3` (mind the space before the comma) and press Enter
 * Click the **Environment variables** button
 * In either of the fields (**User variables** or **System variables**), add the four variables
@@ -46,7 +48,7 @@ On Windows, one configures the environment variables in the **Advanced System Se
 
 Git accepts the environment variables described earlier. There is no simple way to add a unique certificate to git's trust store (see [this discussion](http://stackoverflow.com/questions/23807313/adding-self-signed-ssl-certificate-without-disabling-authority-signed-ones)), but it seems to correctly manage the `curl_ca_bundle` one (see previous chapter) so if you've done the previous steps you should be all set.
 
-Edit : apparently this is not true, you have to add a specifig configuration option in one of your git configuration files:
+Edit: apparently this is not true, you have to add a specific configuration option in one of your git configuration files:
 
 ```
 [http]
