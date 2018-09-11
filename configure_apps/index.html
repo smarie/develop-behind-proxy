@@ -714,16 +714,20 @@ curl_ca_bundle  &lt;path_to_ca_bundle.pem&gt;
 
 
 <p>Important note: storing the list of trusted certificates in a raw file such as here <code>&lt;path_to_ca_bundle.pem&gt;</code> is still a bit unsecure, unless you make sure that the file can not be corrupted by a third party (at least you may wish to ensure that only administrators can modify this file). But this is <strong>far</strong> more secure than disabling SSL certificate verification in your application :)</p>
-<p>To set these environment variables in Linux you can either use the user-specific ~/.bashrc file or configure them in the global environment. However, this depends on the distribution you are running:
-<em> Ubuntu: Create or append to <code>/etc/environment</code>
-</em> Gentoo Linux: Create a new file in <code>/etc/env.d</code> such as <code>/etc/env.d/99proxy</code></p>
-<p>On Windows, one configures the environment variables in the <strong>Advanced System Settings</strong>:
-<em> Press Windows-Key + R, enter <code>sysdm.cpl ,3</code> (mind the space before the comma) and press Enter
-</em> Click the <strong>Environment variables</strong> button
-* In either of the fields (<strong>User variables</strong> or <strong>System variables</strong>), add the four variables</p>
+<p>To set these environment variables in Linux you can either use the user-specific ~/.bashrc file or configure them in the global environment. However, this depends on the distribution you are running:</p>
+<ul>
+<li>Ubuntu: Create or append to <code>/etc/environment</code></li>
+<li>Gentoo Linux: Create a new file in <code>/etc/env.d</code> such as <code>/etc/env.d/99proxy</code></li>
+</ul>
+<p>On Windows, one configures the environment variables in the <strong>Advanced System Settings</strong>:</p>
+<ul>
+<li>Press Windows-Key + R, enter <code>sysdm.cpl ,3</code> (mind the space before the comma) and press Enter</li>
+<li>Click the <strong>Environment variables</strong> button</li>
+<li>In either of the fields (<strong>User variables</strong> or <strong>System variables</strong>), add the four variables</li>
+</ul>
 <h2 id="git">Git<a class="headerlink" href="#git" title="Permanent link">&para;</a></h2>
 <p>Git accepts the environment variables described earlier. There is no simple way to add a unique certificate to git's trust store (see <a href="http://stackoverflow.com/questions/23807313/adding-self-signed-ssl-certificate-without-disabling-authority-signed-ones">this discussion</a>), but it seems to correctly manage the <code>curl_ca_bundle</code> one (see previous chapter) so if you've done the previous steps you should be all set.</p>
-<p>Edit : apparently this is not true, you have to add a specifig configuration option in one of your git configuration files:</p>
+<p>Edit: apparently this is not true, you have to add a specific configuration option in one of your git configuration files:</p>
 <div class="codehilite"><pre><span></span>[http]
   sslCAInfo = &lt;path_to_ca_bundle.pem&gt;
 </pre></div>
