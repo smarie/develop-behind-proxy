@@ -205,6 +205,13 @@ systemProp.https.proxyHost=proxy.company.com
 systemProp.https.proxyPort=80
 ```
 
+## Pacman & paru
+
+pacman respects the env vars, but you have to run it with sudo.
+As a solution you could `alias sudo='sudo -E', which will preserve your envvars in sudo.
+
+In paru (maybe also yay) you can set `--sudoflags '-E'` to achieve the same.
+
 ## Android Studio
 
 The proxy certificate needs to imported via the settings dialog: `Settings → Appereance & Behavior → System Settings → HTTP Proxy and Settings → Tools → Server Certificates`
