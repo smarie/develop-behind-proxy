@@ -1,7 +1,7 @@
 site_name: develop-behind-proxy
 # site_description: 'A short description of my project'
 repo_url: https://github.com/smarie/develop-behind-proxy
-pages:
+nav:
     - Home: index.md
     - HTTP/HTTPs Proxy basics: basics.md
     - Know your proxy: know_your_proxy.md
